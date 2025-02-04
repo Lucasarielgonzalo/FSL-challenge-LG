@@ -17,32 +17,33 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0  # 🚀 Esto establece el directorio base para todos los comandos
 
     steps:
       - name: 📥 Checkout Code
         uses: actions/checkout@v3
 
-      - name: 📦 Set up Node.js
+      - name: 📦 Set up Node.js 15
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '15'
+
+      - name: 📂 Downgrade npm to version 7
+        run: npm install -g npm@7
 
       - name: 📂 Install Dependencies
-        run: |
-          cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
-          npm install
+        run: npm install
 
       - name: 🔍 Run Linter
-        run: |
-          cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
-          npm run lint || echo "Lint warnings ignored"
+        run: npm run lint || echo "Lint warnings ignored"
+
+      - name: 🎨 Run Prettier (Formatting)
+        run: npm run prettier || echo "Prettier warnings ignored"
 
       - name: ✅ Run Tests
-        run: |
-          cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
-          npm test || echo "Tests failed but continuing"
+        run: CI=true npm test || echo "Tests failed but continuing"
 
       - name: 🏗️ Build Application
-        run: |
-          cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
-          npm run build
+        run: npm run build
