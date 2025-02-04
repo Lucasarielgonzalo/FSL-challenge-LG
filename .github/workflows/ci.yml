@@ -29,20 +29,20 @@ jobs:
 
       - name: 📂 Install Dependencies
         run: |
-        cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
-        npm install
+          cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
+          npm install
 
       - name: 🔍 Run Linter
         run: |
-        cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
-        npm run lint || echo "Lint warnings ignored"
+          cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
+          npm run lint || echo "Lint warnings ignored"
 
       - name: ✅ Run Tests
         run: |
-        cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
-        npm test || echo "Tests failed but continuing"
+          cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
+          npm test || echo "Tests failed but continuing"
 
       - name: 🏗️ Build Application
         run: |
-        cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
-        npm run build
+          cd assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0
+          npm run build
