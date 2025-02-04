@@ -3,11 +3,13 @@ name: CI Pipeline
 on:
   pull_request:
     branches:
+      - master
       - devel
       - stage
       - prod
   push:
     branches:
+      - master
       - devel
       - stage
       - prod
