@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-      ##  working-directory: assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0  # 🚀 Esto establece el directorio base para todos los comandos
+        working-directory: assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0  # 🚀 Esto establece el directorio base para todos los comandos
 
     steps:
-    ##  - name: 📥 Checkout Code
+      - name: 📥 Checkout Code
         uses: actions/checkout@v3
 
       - name: 📦 Set up Node.js 15 with npm 7
