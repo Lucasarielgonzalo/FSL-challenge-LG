@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0  # 🚀 Esto establece el directorio base para todos los comandos
+        working-directory: assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0/package-lock.json  # 🚀 Esto establece el directorio base para todos los comandos
 
     steps:
       - name: 📥 Checkout Code
