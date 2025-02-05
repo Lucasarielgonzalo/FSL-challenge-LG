@@ -19,19 +19,18 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0  # 🚀 Esto establece el directorio base para todos los comandos
+      ##  working-directory: assessment-cc-devops-terraform-sr-01/codebase/rdicidr-0.1.0  # 🚀 Esto establece el directorio base para todos los comandos
 
     steps:
-      - name: 📥 Checkout Code
+    ##  - name: 📥 Checkout Code
         uses: actions/checkout@v3
 
-      - name: 📦 Set up Node.js 15
+      - name: 📦 Set up Node.js 15 with npm 7
         uses: actions/setup-node@v3
         with:
           node-version: '15'
-
-      - name: 📂 Downgrade npm to version 7
-        run: npm install -g npm@7
+          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org/'
 
       - name: 📂 Install Dependencies
         run: npm install
